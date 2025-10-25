@@ -1,0 +1,32 @@
+/* snow.css - styles for snow overlay */
+#snow-overlay-canvas {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 2147483647;
+  opacity: 0;
+  transition: opacity 800ms ease;
+  /* cool winter glow */
+  background: linear-gradient(180deg, rgba(135,206,235,0.1) 0%, rgba(255,255,255,0.05) 100%);
+  backdrop-filter: blur(1px) saturate(0.8) hue-rotate(200deg) brightness(0.9);
+  animation: winterGlow 4s ease-in-out infinite alternate;
+}
+
+@keyframes winterGlow {
+  0% {
+    background: linear-gradient(180deg, rgba(135,206,235,0.1) 0%, rgba(255,255,255,0.05) 100%);
+  }
+  100% {
+    background: linear-gradient(180deg, rgba(173,216,230,0.15) 0%, rgba(255,255,255,0.08) 100%);
+  }
+}
+
+.snow-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}

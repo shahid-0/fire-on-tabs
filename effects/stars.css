@@ -1,0 +1,29 @@
+/* stars.css - styles for stars overlay */
+#stars-overlay-canvas {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 2147483647;
+  opacity: 0;
+  transition: opacity 800ms ease;
+  /* deep space background */
+  background: radial-gradient(ellipse at center, rgba(0,0,20,0.3) 0%, rgba(0,0,0,0.8) 100%);
+  backdrop-filter: blur(2px) saturate(0.5) hue-rotate(240deg) brightness(0.7);
+  animation: spaceGlow 5s ease-in-out infinite alternate;
+}
+
+@keyframes spaceGlow {
+  0% {
+    background: radial-gradient(ellipse at center, rgba(0,0,20,0.3) 0%, rgba(0,0,0,0.8) 100%);
+  }
+  100% {
+    background: radial-gradient(ellipse at center, rgba(0,0,40,0.4) 0%, rgba(0,0,10,0.9) 100%);
+  }
+}
+
+#stars-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}

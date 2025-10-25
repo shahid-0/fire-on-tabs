@@ -1,14 +1,31 @@
 {
   "manifest_version": 3,
-  "name": "Rain on Tabs",
-  "version": "1.0",
-  "description": "Calm rain appears when you’re inactive for a while.",
-  "permissions": ["scripting", "activeTab"],
+  "name": "Visual Effects on Tabs",
+  "version": "2.0",
+  "description": "Beautiful visual effects (fire, rain, snow, stars, matrix) appear when you're inactive for a while.",
+  "permissions": ["scripting", "activeTab", "storage"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Visual Effects Settings"
+  },
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["content.js"],
-      "css": ["rain.css"]
+      "js": [
+        "effects/fire.js",
+        "effects/rain.js", 
+        "effects/snow.js",
+        "effects/stars.js",
+        "effects/matrix.js",
+        "content.js"
+      ],
+      "css": ["fire.css", "rain.css", "effects/snow.css", "effects/stars.css", "effects/matrix.css"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["effects/*", "*.css"],
+      "matches": ["<all_urls>"]
     }
   ],
   "icons": {

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visual Effects Settings</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎨 Visual Effects</h1>
+            <p>Choose your idle tab effect</p>
+        </header>
+
+        <div class="effects-grid">
+            <div class="effect-card" data-effect="fire">
+                <div class="effect-preview fire-preview">
+                    <div class="flame"></div>
+                    <div class="flame"></div>
+                    <div class="flame"></div>
+                </div>
+                <h3>Fire</h3>
+                <p>Boiling flames with sparks</p>
+            </div>
+
+            <div class="effect-card" data-effect="rain">
+                <div class="effect-preview rain-preview">
+                    <div class="raindrop"></div>
+                    <div class="raindrop"></div>
+                    <div class="raindrop"></div>
+                </div>
+                <h3>Rain</h3>
+                <p>Gentle falling raindrops</p>
+            </div>
+
+            <div class="effect-card" data-effect="snow">
+                <div class="effect-preview snow-preview">
+                    <div class="snowflake">❄</div>
+                    <div class="snowflake">❅</div>
+                    <div class="snowflake">❆</div>
+                </div>
+                <h3>Snow</h3>
+                <p>Winter snowfall</p>
+            </div>
+
+            <div class="effect-card" data-effect="stars">
+                <div class="effect-preview stars-preview">
+                    <div class="star">✦</div>
+                    <div class="star">✧</div>
+                    <div class="star">✩</div>
+                </div>
+                <h3>Stars</h3>
+                <p>Twinkling night sky</p>
+            </div>
+
+            <div class="effect-card" data-effect="matrix">
+                <div class="effect-preview matrix-preview">
+                    <div class="matrix-char">0</div>
+                    <div class="matrix-char">1</div>
+                    <div class="matrix-char">A</div>
+                </div>
+                <h3>Matrix</h3>
+                <p>Digital rain</p>
+            </div>
+        </div>
+
+        <div class="settings">
+            <div class="setting-group">
+                <label for="idle-delay">Idle Delay (seconds)</label>
+                <input type="range" id="idle-delay" min="1" max="30" value="5">
+                <span id="idle-delay-value">5s</span>
+            </div>
+
+            <div class="setting-group">
+                <label for="intensity">Intensity</label>
+                <select id="intensity">
+                    <option value="low">Low</option>
+                    <option value="medium" selected>Medium</option>
+                    <option value="high">High</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="actions">
+            <button id="preview-btn" class="btn btn-secondary">Preview</button>
+            <button id="test-save-btn" class="btn btn-secondary">Test Save</button>
+            <button id="show-settings-btn" class="btn btn-secondary">Show Settings</button>
+        </div>
+        
+        <div class="save-section">
+            <button id="save-btn" class="btn btn-primary btn-full">Save Settings</button>
+        </div>
+
+        <div class="status" id="status"></div>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>
